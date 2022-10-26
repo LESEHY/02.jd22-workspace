@@ -144,6 +144,27 @@ public class Java02 {
             // int범위를 벗어나는 에러가 발생한다
             // 끝에 L자를 써줘야 한다(소문자 l도 가능 but헷갈림!)
             long numLong = 9223372036854775807L;
+            System.out.println("long: " + numLong);
+
+            // 5. float : 소수 자릿수 6 ~ 7
+            // 특이사항 : 숫자 데이터 끝에 F로 처리해야 같은 형임!
+            // 소수점 아래 넘치는 경우 7번째 자리에서 반올림함!
+            float numFloat = 5.123456789F; // 결과: 5.123457
+            System.out.println("float: " + numFloat);
+
+            // 6. double : 소수 자릿수 15
+            // 특이사항 : 숫자 데이터 끝에 D로 처리해야 같은 형임!
+            // float이나 double은 근사값이므로 끝자리수가 달라질 수 있음
+            double numDouble = 7.123456789123456789D;
+            // 결과: double: 7.123456789123456
+            System.out.println("double: " + numDouble);
+
+            // 과학적인 10의 거듭제곱 표시 사용가능(e+자릿수)
+            // float이나 double은 소수점이 없으면 기본 한자릿수 표시함
+            float f1 = 35e3F;
+            double d1 = 12E4D;
+            System.out.println("float: " + f1 + "\n" + "double: " + d1);
+            // "\n"은 줄바꿈 기호
 
 
 
