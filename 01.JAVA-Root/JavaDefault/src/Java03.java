@@ -68,10 +68,18 @@ public class Java03 {
     System.out.println("[ 5. 논리연산자 ]");
     String man = "남자";
     int age = 20;
+
+    System.out.println();
+
     // 논리곱
     System.out.println("한 사람의 성별과 나이가 각각 남자이고 20세 이상이면 회원자격을 준다. 이 사람은 회원인가? |" + (man=="남자"&&age>=20));
+
+    System.out.println();
+
     // 논리합
     System.out.println("한 사람의 성별과 나이가 각각 남자이거나 20세 이상이면 회원자격을 준다. 이 사람은 회원인가? |" + (man=="남자"||age>=20));
+
+    System.out.println();
 
     boolean mem = false;
     // 논리부정
