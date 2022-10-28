@@ -166,6 +166,27 @@ public class Java02 {
             System.out.println("float: " + f1 + "\n" + "double: " + d1);
             // "\n"은 줄바꿈 기호
 
+            System.out.println();
+            // printIn()만 호출하면 엔터됨
+            System.out.println("[ 블린값 출력 ]");
+
+            // 블린값 (ture / flase)
+            boolean isJavaFun = true;
+            boolean isFishTasty = false;
+            // 삼항연산자 -> 비?집:놀이동산
+            System.out.println("자바는 재밌나?: "+(isJavaFun?"응":"아니"));
+            System.out.println("자바는 재밌나?: "+isJavaFun);
+            System.out.println("물고기 맛있나?: "+isFishTasty);
+            System.out.println("물고기 맛있나?: "+(isFishTasty?"매우":"별루"));
+
+            //char 데이터 유형은 단일문자를 지정
+            // 문자는 'A' 또는 'C'와 같이 작은 따옴표 사용필수!
+            System.out.println(); // 구분
+            System.out.println("[char 값 출력]");
+
+            char myGrade = 'b';
+            System.out.println("나의 학점은? : " + myGrade);
+
 
 
 
