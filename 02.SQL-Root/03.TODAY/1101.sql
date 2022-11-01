@@ -81,4 +81,18 @@ VALUES ("이도","01011112222","서울시 종로구","세종대왕 만만세~!!!
 
 INSERT INTO `todolist` (`title`, `cont`)
 VALUES ("SQL 데이터 넣기","insert int로 데이터를 넣어보자");
+
+-- 기본값이 있는 auth컬엄의 값을 기본값 "U"가 아닌 "A"로 넣어보자!
+INSERT INTO `todolist` (`title`, `cont`,`auth`)
+VALUES ("SQL 데이터 빼기","select로 데이터를 빼보자","A");
+
+-- 문자데이터항목에 숫자로 넣어도 문자형 숫자로 입력됨!
+INSERT INTO `todolist` (`title`, `cont`,`auth`)
+VALUES ("333","select로 데이터를 빼보자","A");
+
+-- auth항목의 한글자 데이터인데 두글자 넣은 경우
+INSERT INTO `todolist` (`title`, `cont`,`auth`)
+VALUES ("SQL 데이터 빼기","select로 데이터를 빼보자","AA");
+-- 메시지:
+--  Warning: #1265 Data truncated for column 'auth' at row 1
 --------------------------------------------------------------------
