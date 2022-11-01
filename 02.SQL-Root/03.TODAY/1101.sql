@@ -93,6 +93,8 @@ VALUES ("333","select로 데이터를 빼보자","A");
 -- auth항목의 한글자 데이터인데 두글자 넣은 경우
 INSERT INTO `todolist` (`title`, `cont`,`auth`)
 VALUES ("SQL 데이터 빼기","select로 데이터를 빼보자","AA");
+-- 입력성공 하단에 경고메시지 나옴!
 -- 메시지:
---  Warning: #1265 Data truncated for column 'auth' at row 1
+-- Warning: #1265 Data truncated for column 'auth' at row 1
+-- 해석: 입력한 데이터가 넘쳐서 잘림!
 --------------------------------------------------------------------
