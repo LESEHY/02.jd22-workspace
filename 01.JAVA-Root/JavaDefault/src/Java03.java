@@ -217,5 +217,6 @@ public class Java03 {
     // ceil() 올림, floor() 내림, round() 반올림
     System.out.println("1~5 사이의 난수는? :"
     + Math.ceil(Math.random()*5));
+    
     }
 }
