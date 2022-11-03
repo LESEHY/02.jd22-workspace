@@ -213,10 +213,13 @@ public class Java04 {
             System.out.println("#무지개색 종류는 순서대로");
             for (int i = 0; i < rainbow.length; i++) {
                 System.out.print(rainbow[i] + "색");
-                if (i == rainbow.length - 1) { // 마지막 배열일 때
+                // 마지막 배열일 때
+                if (i == rainbow.length - 1) {
                     System.out.print(" 입니다!\n\n");
                 } // if
-                else { // 나머지 배열일 때
+
+                // 나머지 배열일 때
+                else {
                     System.out.print(", ");
                 } // else
             }
