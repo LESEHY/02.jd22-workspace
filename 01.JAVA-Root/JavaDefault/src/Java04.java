@@ -208,6 +208,7 @@ public class Java04 {
             // (3) 증감 : 변수의 증가 / 감소
 
             // 무지개색을 배열변수에 넣고 for문 돌리기
+            System.out.println();
             String[] rainbow = { "빨강", "주황", "노랑", "초록", "파랑", "남", "보라" };
             // 미션:
             System.out.println("#무지개색 종류는 순서대로");
@@ -223,6 +224,47 @@ public class Java04 {
                     System.out.print(", ");
                 } // else
             }
+            /////////////////////////////////////////////
+            // 8. for-each 문
+            // - 배열값 만큼 자동으로 변수에 할당하면 실행코드 반복 제어함
+
+            // for (타입선언변수 : 배열변수명) {
+            // // 실행코드
+            // }
+
+            // ### 배열의 전체 축구선수 명단 중
+            // 올림픽 경기에 나갈 선수만 표시하기(continue)
+            // 예비선수는 제외함(break)
+            System.out.println();
+            String player[] = {
+                    "김기춘", "홍서범", "하준상", "이종학",
+                    "예비: 이병준", "예비: 서이룡"
+            };
+
+            System.out.println("#축구 한국 대표팀 선수 전체명단: ");
+            for (String mem : player) {
+                System.out.println(mem);
+            } // for-each문
+
+            System.out.println();
+
+            // "하준상"은 제외, "예비: 이병준"부터 출력안함
+            System.out.println(
+                    "#올림픽 경기에 참가할 축구선수 명단: ");
+
+            for (String mem : player) {
+                // "하준상" 거르기 -> continue
+                if (mem == "하준상")
+                    continue;
+                // "예비: 이병준"부터 빠져나감 -> break
+                if (mem == "예비: 이병준")
+                    break;
+                System.out.println(mem);
+            } // for-each
+              // 9. for문 중단,계속 옵션 키워드
+              // (1) continue 빼고 계속
+              // (2) break 중단
+
         } // try문 (스캐너)
 
         // catch문 (에러발생시 처리 구역)
@@ -233,17 +275,7 @@ public class Java04 {
 
             // 사용자가 보여주는 메시지
             System.out.println("꼭 숫자로 입력바랍니다!\n다시갑니다\n");
-        }
+        } // catch문
 
-        // 8. for-each 문
-        // - 배열값 만큼 자동으로 변수에 할당하면 실행코드 반복 제어함
-
-        // for (타입선언변수 : 배열변수명) {
-        // // 실행코드
-        // }
-
-        // 9. for문 중단,계속 옵션 키워드
-        // (1) continue 빼고 계속
-        // (2) break 중단
-    }
-}
+    } // main 메서드
+} // class
