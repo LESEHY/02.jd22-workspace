@@ -83,13 +83,14 @@ public class Java05 {
         // - 2중 for문을 사용하여 2차원배열을 값에 접근한다.
         // 예)
         System.out.println();
-        String[][] sounds = { 
-            {"멍멍","야옹","컹컹","썁썁"}, 
-            {"호이", "보이", "소이"} };
+        String[][] sounds = {
+                { "멍멍", "야옹", "컹컹", "썁썁" },
+                { "호이", "보이", "소이" } };
         for (int i = 0; i < sounds.length; ++i) {
-        for(int j = 0; j < sounds[i].length; ++j) {
-        System.out.println(sounds[i][j]);
-        }}
+            for (int j = 0; j < sounds[i].length; ++j) {
+                System.out.println(sounds[i][j]);
+            }
+        }
 
     }
 }
