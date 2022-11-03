@@ -29,7 +29,15 @@ public class Java04 {
             // next() 메서드는 단어하나를 가져옴(띄어쓰기 맨 앞단어만)
             // nextInt() -> 숫자를 입력받는 스캐너 메서드(형별도 다 있음)
             String actor = myObj.nextLine();
+            System.out.println();
             System.out.println("배우이름: " + actor);
+
+            System.out.println();
+            System.out.println("이 배우의 성별을 입력하시오. [ 남자 | 여자 ]");
+            String gender = myObj.nextLine();
+            System.out.println();
+            System.out.println("성별: " + gender);
+            System.out.println();
 
             // 입력창으로 받은 데이터는 엔터기호등 다른
             // 데이터가 포함되어 있어서 == 비교연산자로 하지말고
@@ -38,18 +46,23 @@ public class Java04 {
 
             // 배우 이름에 해당하는 대표작을 표시하는 if문
             // if (actor=="공유") { 데이터 때문에 비교못함
-            if (actor.equals("공유")) {
+            if (actor.equals("공유") && gender.equals("남자")) {
                 System.out.println("대표작: 도깨비");
             } // if
-            else if (actor.equals("김수현")) {
+            else if (actor.equals("김수현") && gender.equals("남자")) {
                 System.out.println("대표작: 별그대");
+            } // else if
+            else if (actor.equals("김수현") && gender.equals("여자")) {
+                System.out.println("대표작: 어벤져스:에이지 오브 울트론");
             } // else if
             else {
                 System.out.println("모르는 배우");
             } // else
-              /////////////////////////////////////////////////////////
-              // 2. if문
-              // : 조건이 true일때 실행할 코드를 제어함
+
+            System.out.println();
+            /////////////////////////////////////////////////////////
+            // 2. if문
+            // : 조건이 true일때 실행할 코드를 제어함
 
             // if (조건문) {
             // // 실행코드
