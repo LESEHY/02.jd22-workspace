@@ -208,15 +208,15 @@ public class Java04 {
             // (3) 증감 : 변수의 증가 / 감소
 
             // 무지개색을 배열변수에 넣고 for문 돌리기
-            String[] rainbow = {"빨강","주황","노랑","초록","파랑","남","보라"};
+            String[] rainbow = { "빨강", "주황", "노랑", "초록", "파랑", "남", "보라" };
             // 미션:
             System.out.println("#무지개색 종류는 순서대로");
-            for(int i = 0; i < rainbow.length; i++){
+            for (int i = 0; i < rainbow.length; i++) {
                 System.out.print(rainbow[i] + "색");
-                if(i==rainbow.length-1){ // 마지막 배열일 때
+                if (i == rainbow.length - 1) { // 마지막 배열일 때
                     System.out.print(" 입니다!\n\n");
                 } // if
-                else{ // 나머지 배열일 때
+                else { // 나머지 배열일 때
                     System.out.print(", ");
                 } // else
             }
