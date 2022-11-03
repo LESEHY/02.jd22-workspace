@@ -44,23 +44,9 @@ public class Java04 {
             // 변수.equals(내용) 메서드로 비교하면
             // 정확히 입력된 데이터만 비교한다!
 
+            /////////////////////////////////////////////////////////
             // 배우 이름에 해당하는 대표작을 표시하는 if문
             // if (actor=="공유") { 데이터 때문에 비교못함
-            if (actor.equals("공유") && gender.equals("남자")) {
-                System.out.println("대표작: 도깨비");
-            } // if
-            else if (actor.equals("김수현") && gender.equals("남자")) {
-                System.out.println("대표작: 별그대");
-            } // else if
-            else if (actor.equals("김수현") && gender.equals("여자")) {
-                System.out.println("대표작: 어벤져스:에이지 오브 울트론");
-            } // else if
-            else {
-                System.out.println("모르는 배우");
-            } // else
-
-            System.out.println();
-            /////////////////////////////////////////////////////////
             // 2. if문
             // : 조건이 true일때 실행할 코드를 제어함
 
@@ -75,40 +61,119 @@ public class Java04 {
             // if : 지정된 조건이 true인 경우 실행할 코드
             // else if : 상단 조건이 false인 경우 새로운 조건 추가
             // else : 모든 조건에 해당없을 경우 실행할 코드
+            if (actor.equals("공유") && gender.equals("남자")) {
+                System.out.println("대표작: 도깨비");
+            } // if
+            else if (actor.equals("김수현") && gender.equals("남자")) {
+                System.out.println("대표작: 별그대");
+            } // else if
+            else if (actor.equals("김수현") && gender.equals("여자")) {
+                System.out.println("대표작: 어벤져스:에이지 오브 울트론");
+            } // else if
+            else {
+                System.out.println("모르는 배우");
+            } // else
+
+            //////////////////////////////////////////////////
+            // 3. 삼항연산자(짧은 if문)
+            // 변수 = (조건문) ? true시 실행문 : false시 실행문;
+            // 비?집:놀이동산
+            System.out.println();
+
+            System.out.println("오늘은 당신의 생일인가요? [ 예 | 아니오 ]");
+            String birth = myObj.nextLine();
+            System.out.println();
+            System.out.println(
+                    birth.equals("예") ? "생일축하합니다" : "오늘도 행복하세요");
+
+            System.out.println();
+            ///////////////////////////////////////////////
+            // 4. switch 문
+
+            // : 단일조건을 분류하여 실행코드를 나눔
+
+            // switch(변수) {
+            // case x:
+            // // 실행코드
+            // break;
+            // case y:
+            // // 실행코드
+            // break;
+            // default:
+            // // 실행코드
+            // }
+            System.out.println("오늘 점심메뉴를 선택하세요!");
+            System.out.println("1. 마라탕");
+            System.out.println("2. 감자탕");
+            System.out.println("3. 돈까스");
+            System.out.println("4. 비빔밥");
+            System.out.println("5. 기타");
+
+            System.out.println("#메뉴선택번호: ");
+            int menu = myObj.nextInt();
+            System.out.println();
+
+            // 선텍메뉴 번호에 따라 switch문으로 출력문을 다르게함!
+            switch (menu) {
+                case 1:
+                    System.out.println("마라마라마라탕탕탕");
+                    break;
+                case 2:
+                    System.out.println("감자돌이, 감자순이");
+                    break;
+                case 3:
+                    System.out.println("돈내고 돈까스먹어");
+                    break;
+                case 4:
+                    System.out.println("마구마구비벼먹어");
+                    break;
+                default:
+                    System.out.println("아무거나 먹어");
+            }// switch
+             ///////////////////////////////////////
+             // 5. while문
+             // - 조건이 true인 동안 반복실행 코드를 제어함
+
+            // while (조건문) {
+            // // 실행코드
+            // }
+            System.out.println();
+            System.out.println(
+                    "지금 빵을 몇개 먹고 싶은가? \n개수를 숫자로 써라! 그럼 빵줄게");
+            System.out.println("#빵개수: ");
+            int bread = myObj.nextInt();
+            System.out.println();
+
+            // 숫자 증가변수
+            int bnum = 0;
+            while (bnum < bread) {
+                bnum++; // 1씩 증가
+                System.out.println("빵 ");
+
+            } // while
+
+            System.out.println("\n");
+            /////////////////////////////////////////////
+            // 6. Do/While문
+            // - 먼저 코드를 실행후 반복실행 여부를 제어함
+
+            // do {
+            // // 실행코드
+            // }
+            // while (조건문);
+            
+
+        } // try문 (스캐너)
+
+        // catch문 (에러발생시 처리 구역)
+        catch (Exception e) {
+            // e.getMessage() -> 기본 에러메시지
+            // System.out.println(e.getMessage());
+            // 결과: null -> 내용이 없는 데이터!
+
+            // 사용자가 보여주는 메시지
+            System.out.println("꼭 숫자로 입력바랍니다!\n다시갑니다\n");
         }
-
-        // 3. 삼항연산자(짧은 if문)
-        // 변수 = (조건문) ? true시 실행문 : false시 실행문;
-
-        // 4. switch 문
-
-        // : 단일조건을 분류하여 실행코드를 나눔
-
-        // switch(변수) {
-        // case x:
-        // // 실행코드
-        // break;
-        // case y:
-        // // 실행코드
-        // break;
-        // default:
-        // // 실행코드
-        // }
-
-        // 5. while문
-        // - 조건이 true인 동안 반복실행 코드를 제어함
-
-        // while (조건문) {
-        // // 실행코드
-        // }
-
-        // 6. Do/While문
-        // - 먼저 코드를 실행후 반복실행 여부를 제어함
-
-        // do {
-        // // 실행코드
-        // }
-        // while (조건문);
 
         // 7. for문
         // - 지정된 횟수 만큼 코드를 반복실행하여 제어함
