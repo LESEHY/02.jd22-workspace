@@ -46,8 +46,8 @@ FROM `customers` WHERE `company`="Company K";
 ----------------------------------------------------------
 
 -- <<<< 검색에 사용되는 select >>>>>>>
--- -> LIKE 키워드! + "%"
--- -> %를 뒤에 붙여 like검색하면 어떤문자로 시작하는 모든 것 검색
+-- LIKE 키워드! + "%"
+-- %를 뒤에 붙여 like검색하면 어떤문자로 시작하는 모든 것 검색
 
 -- 쿼리 7 : 'customers' 테이블
 SELECT concat(`first_name`,"",`last_name`)AS "이름",
@@ -55,7 +55,7 @@ SELECT concat(`first_name`,"",`last_name`)AS "이름",
 FROM `customers` WHERE `first_name` LIKE "A%";
 ----------------------------------------------------------
 
--- -> %를 앞에 붙여서 like검색하면 어떤문자로 끝나는 모든 것 검색
+-- %를 앞에 붙여서 like검색하면 어떤문자로 끝나는 모든 것 검색
 
 -- 쿼리 8 : 'customers' 테이블
 SELECT concat(`first_name`,"",`last_name`)AS "이름",
@@ -63,7 +63,7 @@ SELECT concat(`first_name`,"",`last_name`)AS "이름",
 FROM `customers` WHERE `first_name` LIKE "%n";
 -----------------------------------------------------------
 
--- -> %를 앞뒤에 붙여서 like검색하면 어떤문자가 들어간 모든 것 검색
+-- %를 앞뒤에 붙여서 like검색하면 어떤문자가 들어간 모든 것 검색
 
 -- 쿼리 9 : 'customers' 테이블
 SELECT concat(`first_name`,"",`last_name`)AS "이름",
@@ -71,7 +71,7 @@ SELECT concat(`first_name`,"",`last_name`)AS "이름",
 FROM `customers` WHERE `first_name` LIKE "%ar%";
 -------------------------------------------------------------
 
--- -> 언더바(_)를 사용할 개수만큼 글자수의 제한을 주어 
+-- 언더바(_)를 사용할 개수만큼 글자수의 제한을 주어 
 -- 그것이상의 모든 것 검색
 
 -- 쿼리 10 : 'customers' 테이블
@@ -79,6 +79,17 @@ SELECT concat(`first_name`,"",`last_name`)AS "이름",
 `company`AS "회사", `business_phone`AS "연락처"
 FROM `customers` WHERE `first_name` LIKE "a_______%";
 --------------------------------------------------------------
+
+-- %를 중간에 사용하여 어떤문자로 시작하고 
+-- 어떤문자로 끝나는 모든것 검색
+
+-- 쿼리 11 : 'customers' 테이블
+SELECT concat(`first_name`,"",`last_name`)AS "이름",
+`company`AS "회사", `business_phone`AS "연락처"
+FROM `customers` WHERE `first_name` LIKE "B%D";
+----------------------------------------------------------------
+
+
 
 
 
