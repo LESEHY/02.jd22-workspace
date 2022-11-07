@@ -91,21 +91,53 @@ FROM `customers` WHERE `first_name` LIKE "B%D";
 
 -- 다중조건(곱) : WHERE 컬럼명 = 값 AND 컬럼명 = 값
 
--- 쿼리 12 : 
+-- 쿼리 12 : 'orders' 테이블
+SELECT * FROM `orders` 
+WHERE `ship_city` = 'New York';
 
+-- 쿼리 13: 'orders' 테이블
+SELECT * FROM `orders` 
+WHERE `ship_city` = 'New York' and `payment_type`= "Credit Card";
 -----------------------------------------------------------------
 
 -- 다중조건(합) : WHERE 컬럼명 = 값 OR 컬럼명 = 값
 
+-- 쿼리 14: 'orders' 테이블
+SELECT * FROM `orders` 
+WHERE `ship_city` = 'New York' OR `ship_city` = "Chicago";
+
 -----------------------------------------------------------------
 
 -- NOT조건 : WHERE NOT 컬럼명 = 값
+
+-- 쿼리 15: 'orders' 테이블
+SELECT * FROM `orders` 
+WHERE NOT `payment_type` = 'Credit Card';
+-- 결과보고  특이사항 : `payment_type` = 'Credit Card'가 아닌 
+-- 데이터가 나왔으나 null값도 제외됨!(구체적인 값이 없으므로 자동제외!)
 
 -----------------------------------------------------------------
 
 -- -> 위의 여러 조건을 쓸 경우 예시
 --     SELECT * FROM `테이블명`
 --     WHERE 컬럼명 = 값 AND NOT 컬럼명 = 값 OR 컬럼명 = 값
+
+-- 쿼리 16: 'orders' 테이블
+SELECT * FROM `orders` 
+WHERE `payment_type` = "Check" 
+AND NOT `ship_city` = 'New York'
+OR `ship_name` = 'Christina Lee';
+-----------------------------------------------------------------
+
+-- SELECT COUNT(*) FROM `테이블명`
+-- -> 전체 레코드 개수 
+-- -> 뒤에 조건문이 있다면 조건에 해당하는 레코드 개수
+
+-- 쿼리 17 : 'orders' 테이블
+SELECT COUNT(*) AS "전체 레코드수" FROM `orders` 
+WHERE `payment_type` = "Check" 
+AND NOT `ship_city` = 'New York'
+OR `ship_name` = 'Christina Lee';
 -----------------------------------------------------------------
 
 
