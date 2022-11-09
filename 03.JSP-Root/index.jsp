@@ -3,7 +3,7 @@
     pageEncoding="UTF-8"%>
 <%! // 스크립트 요소 선언부
     String str1 = "나야나";
-    String str2 = "JSP로 개발해야지"
+    String str2 = "JSP로 개발해야지";
     
 %>
 
@@ -20,7 +20,7 @@
     <h1><%=str1%></h1>
     <p>
         <% // 스크립트 요소 (스크립트 릿)
-            out.printIn(str2+"화이팅!");
+            out.println(str2+"화이팅!");
         %>
     </p>
     
