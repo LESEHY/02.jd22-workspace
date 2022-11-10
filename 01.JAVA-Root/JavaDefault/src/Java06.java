@@ -67,6 +67,8 @@ public class Java06 {
         // 나의 네번째 메서드 : 이달의 표어
         System.out.println("이달의표어: "+j06.makeTitle(1000, "소시지를 드립니다"));
 
+        // 이름이 같은 오버로딩 호출
+        System.out.println("오버로딩: " + j06.makeTitle(11, "레밍스게임", 20));
     } // main
 
     // 나의 첫 메서드
@@ -91,8 +93,8 @@ public class Java06 {
     } // makeTitle 메서드
 
     // 표어만들기를 똑같이 하는데 내용이 다르므로 전달값도 다름
-    // 메서드 명이 똑같다! -> 오버라이드 메서드!
-    public String makeTitle(int month, String evt, String people) {
+    // 메서드 명이 똑같다! -> 오버로딩 메서드!
+    public String makeTitle(int month, String evt, int people) {
         return month + "월의 " + evt + "당첨자는 " + people + "명입니다!";
     } // makeTitle 메서드
 } // class
