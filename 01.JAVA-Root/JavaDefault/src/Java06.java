@@ -46,6 +46,27 @@ public class Java06 {
         myFirst();
         myFirst(); // 호출한 만큼 실행됨!
 
+        // 나의 두번째 메서드 호출
+        System.out.println(mySecond("김"));
+        System.out.println(mySecond("이"));
+        System.out.println(mySecond("박"));
+
+        // 나의 세번째 메서드 호출
+        // static이 아니므로 본 클래스에 자동 소속되지 않고
+        // 객체형으로 생성해야만 사용할 수 있다!
+        // new키워드로 생성함! 클래스소속으로 생성해야 함!
+        // 생성법:
+        // 클래스명 변수 = new 클래스명();
+        // 클래스가 객체로 생성되어야
+        // static이 아닌 메서드를 호출할 수 있다!
+
+        Java06 j06 = new Java06();
+
+        System.out.println("9000원짜리 점심을 6명이 먹었다. 얼마내야하나? " + j06.myThird(9000, 6) + "원");
+
+        // 나의 네번째 메서드 : 이달의 표어
+        System.out.println("이달의표어: "+j06.makeTitle(1000, "소시지를 드립니다"));
+
     } // main
 
     // 나의 첫 메서드
@@ -54,7 +75,24 @@ public class Java06 {
     } // myFirst 메서드
 
     // 나의 두번째 메서드
-    public static String mySecond(String family){
+    public static String mySecond(String family) {
         return family + "씨 가문";
     } // mySecond 메서드
+
+    // 나의 세번째 메서드 -> static이 없음
+    // 식사비 계산 : pay 가격, people 사람 수
+    public int myThird(int pay, int people) {
+        return pay * people;
+    } // myThird 메서드
+
+    // 나의 네번째 메서드 : 표어 만들기
+    public String makeTitle(int num, String msg) {
+        return num + "명에게 " + msg;
+    } // makeTitle 메서드
+
+    // 표어만들기를 똑같이 하는데 내용이 다르므로 전달값도 다름
+    // 메서드 명이 똑같다! -> 오버라이드 메서드!
+    public String makeTitle(int month, String evt, String people) {
+        return month + "월의 " + evt + "당첨자는 " + people + "명입니다!";
+    } // makeTitle 메서드
 } // class
