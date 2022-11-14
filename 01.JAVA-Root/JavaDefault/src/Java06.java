@@ -48,8 +48,8 @@ public class Java06 {
          * 2. 호출시에 전달변수의 종류와 개수에 맞게 호출하면 된다.
          * 3. 같은 이름의 메서드가 중복되어 로딩되므로 오버로딩이라고 한다!
          * 4. 항상 오버라이딩(Overriding)과 비교하여 알아두자!
-         *    오버라이딩은 클래스상속에서 자식클래스가 부모클래스의 메서드를
-         *    재정의 하는 것이다!(부모메서드를 자식이 올라탐!) 
+         * 오버라이딩은 클래스상속에서 자식클래스가 부모클래스의 메서드를
+         * 재정의 하는 것이다!(부모메서드를 자식이 올라탐!)
          * 
          * **************************************************
          * 
@@ -58,10 +58,12 @@ public class Java06 {
          * 1. 메서드 내에서 선언된 변수는 메서드 내에서 어디서나 사용가능하다.
          * (단, 선언할당 후 아래에서 사용가능함! 위에서는 사용불가!)
          * 2. 메서드 바깥의 변수는 메서드 내에서 3가지로 호출된다.
-         *    1) static 메서드는 클래스 객체 생성 후 사용한다.
-         *    2) static이 아닌 메서드는 바로 변수를 사용할 수 있다.
-         *      -> 이유: static이 아닌 메서드는 객체생성을 해야하므로
-         *              클래스하위의 모든 멤버변수에 접근할 수 있다!
+         * 1) static 메서드는 클래스 객체 생성 후 사용한다.
+         * 2) static이 아닌 메서드는 바로 변수를 사용할 수 있다.
+         * -> 이유: static이 아닌 메서드는 객체생성을 해야하므로
+         * 클래스하위의 모든 멤버변수에 접근할 수 있다!
+         * 3) 변수에 static을 사용하면 모든 메서드에서 바로 사용할 수 있다!
+         * 
          */
 
         // 나의 첫 메서드 호출!
@@ -88,13 +90,16 @@ public class Java06 {
         System.out.println("9000원짜리 점심을 6명이 먹었다. 얼마내야하나? " + j06.myThird(9000, 6) + "원");
 
         // 나의 네번째 메서드 : 이달의 표어
-        System.out.println("이달의표어: "+j06.makeTitle(1000, "소시지를 드립니다"));
+        System.out.println("이달의표어: " + j06.makeTitle(1000, "소시지를 드립니다"));
 
         // 이름이 같은 오버로딩 호출
         System.out.println("오버로딩1: " + j06.makeTitle(11, "레밍스게임", 20));
         // 이름이 같은 오버로딩 호출
 
         System.out.println("오버로딩2: " + j06.makeTitle(99.999));
+
+        // 10에서 1까지 더한 결과출력 재귀메서드 호출!
+        System.out.println(sumNums(10));
 
     } // main
 
@@ -105,11 +110,6 @@ public class Java06 {
     String newMsg = "새롭게 힘내!";
     // 2형 : static 선언 변수
     static String addMsg = "화이팅!";
-    
-
-
-
-
 
     // 나의 첫 메서드
     public static void myFirst() {
@@ -142,7 +142,8 @@ public class Java06 {
     // 표어만들기를 똑같이 하는데 내용이 다르므로 전달값도 다름
     // 메서드 명이 똑같다! -> 오버로딩 메서드!
     public String makeTitle(int month, String evt, int people) {
-        return month + "월의 " + evt + "당첨자는 " + people + "명입니다!";
+        return month + "월의 " +
+                evt + "당첨자는 " + people + "명입니다!" + newMsg;
     } // makeTitle 메서드
 
     // 표어만들기를 똑같이 하는데 내용이 다르므로 전달값도 다름
@@ -150,4 +151,21 @@ public class Java06 {
     public String makeTitle(double ndata) {
         return ndata + "%의 확률로 당신에게 당첨의 기회를 드립니다!";
     } // makeTitle 메서드
+
+    ////////////////////////////////////
+    //////////// 재귀 메서드 ///////////
+    // -> 메서드 자기자신을 다시 호출하여 결과를 만드는 메서드이다!
+    // 10부터 1까지 더하여 그 결과를 화면에 계산식과 함께 출력하시오!
+    // 바로 호출 가능한 static 메서드로 만들자!
+    public static int sumNums(int num) { // 10부터 1까지 더한다면 10이 들어옴
+        if(num > 0){
+            // 중간 계산식 만들기 : 1이되기까지 + 기호로 연결하기
+            System.out.print(num+(num==1?"=":"+"));
+            return num + sumNums(num - 1);
+            // 재귀호출방식! : 기존값에 1작은 숫자를 더함(0이상일때 까지!)
+        } // if
+        else{
+            return num;
+        } // else
+    } // sumNums 메서드
 } // class
