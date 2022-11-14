@@ -57,7 +57,11 @@ public class Java06 {
          * 
          * 1. 메서드 내에서 선언된 변수는 메서드 내에서 어디서나 사용가능하다.
          * (단, 선언할당 후 아래에서 사용가능함! 위에서는 사용불가!)
-         * 2. 
+         * 2. 메서드 바깥의 변수는 메서드 내에서 3가지로 호출된다.
+         *    1) static 메서드는 클래스 객체 생성 후 사용한다.
+         *    2) static이 아닌 메서드는 바로 변수를 사용할 수 있다.
+         *      -> 이유: static이 아닌 메서드는 객체생성을 해야하므로
+         *              클래스하위의 모든 멤버변수에 접근할 수 있다!
          */
 
         // 나의 첫 메서드 호출!
@@ -96,7 +100,10 @@ public class Java06 {
 
     // 클래스 멤버변수 : 클래스바로 아래 선언된 변수들(메서드 바깥에 있음!)
     // -> 클래스의 속성(명사적특징)에 해당됨!
+
+    // 1형 : 변수형으로만 선언할당한 변수
     String newMsg = "새롭게 힘내!";
+    // 2형 : static 선언 변수
     static String addMsg = "화이팅!";
     
 
@@ -110,7 +117,7 @@ public class Java06 {
         Java06 myObj = new Java06();
 
         // 함수 내 지역변수
-        int myNum = 1000; 
+        int myNum = 1000;
 
         System.out.println("나는 자바개발자다!" + addMsg + myObj.newMsg + myNum);
         // int myNum = 1000; -> 아래만들면 호출불가!
@@ -129,7 +136,7 @@ public class Java06 {
 
     // 나의 네번째 메서드 : 표어 만들기
     public String makeTitle(int num, String msg) {
-        return num + "명에게 " + msg;
+        return num + "명에게 " + msg + newMsg + addMsg;
     } // makeTitle 메서드
 
     // 표어만들기를 똑같이 하는데 내용이 다르므로 전달값도 다름
