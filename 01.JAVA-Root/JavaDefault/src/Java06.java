@@ -40,6 +40,8 @@ public class Java06 {
          * 3. public 접근 제한자는 모든 클래스에서 접근할 수 있다는 표시
          * 4. static는 메서드가 클래스에 속해 있음(new키워드로 생성 안함!)
          * 
+         * ************************************************
+         * 
          * [ 메서드 오버로딩(Overloading) ]
          * 
          * 1. 메서드 이름이 같고 전달변수의 종류와 개수가 다른 메서드다.
@@ -48,6 +50,14 @@ public class Java06 {
          * 4. 항상 오버라이딩(Overriding)과 비교하여 알아두자!
          *    오버라이딩은 클래스상속에서 자식클래스가 부모클래스의 메서드를
          *    재정의 하는 것이다!(부모메서드를 자식이 올라탐!) 
+         * 
+         * **************************************************
+         * 
+         * [ 메서드에서의 변수사용 ]
+         * 
+         * 1. 메서드 내에서 선언된 변수는 메서드 내에서 어디서나 사용가능하다.
+         * (단, 선언할당 후 아래에서 사용가능함! 위에서는 사용불가!)
+         * 2. 
          */
 
         // 나의 첫 메서드 호출!
@@ -84,14 +94,31 @@ public class Java06 {
 
     } // main
 
+    // 클래스 멤버변수 : 클래스바로 아래 선언된 변수들(메서드 바깥에 있음!)
+    // -> 클래스의 속성(명사적특징)에 해당됨!
+    String newMsg = "새롭게 힘내!";
+    static String addMsg = "화이팅!";
+    
+
+
+
+
+
     // 나의 첫 메서드
     public static void myFirst() {
-        System.out.println("나는 자바개발자다!");
+        // static 메서드가 static이 아닌 변수로 접근시 객체를 생성해야함!
+        Java06 myObj = new Java06();
+
+        // 함수 내 지역변수
+        int myNum = 1000; 
+
+        System.out.println("나는 자바개발자다!" + addMsg + myObj.newMsg + myNum);
+        // int myNum = 1000; -> 아래만들면 호출불가!
     } // myFirst 메서드
 
     // 나의 두번째 메서드
     public static String mySecond(String family) {
-        return family + "씨 가문";
+        return family + "씨 가문," + addMsg;
     } // mySecond 메서드
 
     // 나의 세번째 메서드 -> static이 없음
