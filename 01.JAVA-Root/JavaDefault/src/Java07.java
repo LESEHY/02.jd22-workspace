@@ -80,9 +80,13 @@ public class Java07 {
 
         // 어떻게 셋팅하고 값을 불러오지?(겟터/셋터로!!!)
 
+        // 가격설정하기 : setPrice(숫자)  
+        fruits.setPrice(12000);
+        // 가격가져오기 : getPrice()
+        System.out.println(fruits.name + "의 가격은 " + fruits.getPrice() + "원 입니다!");
+        
         // 다시 과일 속성찍기 메서드 호출
         fruits.fruitsFn();
-
 
         // 과일정의 속성 변경하기
         // final 변수는 상수이므로 못바꾼다!
